@@ -85,15 +85,15 @@ const maxFloating = isMobile ? 8 : 20;
 setInterval(() => { if (floatingContainer.children.length < maxFloating) createFloatingItem(); }, isMobile ? 4000 : 2000);
 
 // ==================== COUNTDOWN TIMER ====================
-const partyDate = new Date('2026-06-21T00:00:00+05:30');
+const partyDate = new Date('2026-06-10T00:00:00+05:30');
 
 function updateCountdown() {
   const now = new Date();
   const diff = partyDate - now;
 
   if (diff <= 0) {
-    document.querySelectorAll('.countdown-number').forEach(el => el.textContent = '🎉');
-    document.querySelectorAll('.countdown-label').forEach(el => el.textContent = 'Party Time!');
+    document.querySelectorAll('.countdown-number').forEach(el => el.textContent = 'Party Time!🎉');
+    document.querySelectorAll('.countdown-label').forEach(el => el.textContent = 'Be There at 7:30 PM!');
     return;
   }
 
