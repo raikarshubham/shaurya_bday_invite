@@ -44,10 +44,12 @@ class Confetti {
   }
 }
 
-// Create confetti
-for (let i = 0; i < 60; i++) {
+// Create confetti — fewer on mobile for performance
+const isMobile = window.innerWidth <= 480;
+const confettiCount = isMobile ? 25 : 60;
+for (let i = 0; i < confettiCount; i++) {
   const c = new Confetti();
-  c.y = Math.random() * canvas.height; // Spread initial position
+  c.y = Math.random() * canvas.height;
   confettiPieces.push(c);
 }
 
@@ -75,10 +77,12 @@ function createFloatingItem() {
   el.addEventListener('animationend', () => el.remove());
 }
 
-// Initial batch
-for (let i = 0; i < 15; i++) createFloatingItem();
+// Initial batch — fewer on mobile
+const floatingInitial = isMobile ? 6 : 15;
+for (let i = 0; i < floatingInitial; i++) createFloatingItem();
 // Keep adding
-setInterval(() => { if (floatingContainer.children.length < 20) createFloatingItem(); }, 2000);
+const maxFloating = isMobile ? 8 : 20;
+setInterval(() => { if (floatingContainer.children.length < maxFloating) createFloatingItem(); }, isMobile ? 4000 : 2000);
 
 // ==================== COUNTDOWN TIMER ====================
 const partyDate = new Date('2026-06-21T00:00:00+05:30');

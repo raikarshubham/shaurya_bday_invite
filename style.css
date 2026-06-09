@@ -563,28 +563,176 @@ a { text-decoration:none; color:inherit; }
   animation: none;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== MOBILE TOUCH OPTIMIZATIONS ========== */
+@media (pointer: coarse) {
+  a, button, .badge, .cartoon-item, .detail-card, .scroll-cta,
+  .rsvp-phone-btn, .rsvp-whatsapp-btn {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  /* Disable hover transforms on touch — they stick on mobile */
+  .detail-card:hover,
+  .cartoon-item:hover,
+  .expect-item:hover,
+  .character-card:hover,
+  .countdown-card:hover { transform: none; }
+  .badge:hover { transform: none; }
+}
+
+/* ========== TABLET (≤ 768px) ========== */
 @media (max-width: 768px) {
+  /* Hero */
+  .hero-section { min-height: auto; padding: 3rem 1rem 0; }
+  .hero-image-wrapper { max-width: 90%; }
+  .hero-emojis { letter-spacing: 4px; }
+  .scroll-cta { padding: 0.9rem 2rem; font-size: 1.1rem; }
+
+  /* Character */
   .character-card {
     flex-direction: column; text-align: center;
-    padding: 1.5rem;
+    padding: 1.5rem; gap: 1.5rem;
   }
-  .character-image-wrapper { width: 100%; max-width: 300px; margin: 0 auto; }
+  .character-image-wrapper { width: 100%; max-width: 280px; margin: 0 auto; }
   .character-badges { justify-content: center; }
+  .character-name { font-size: 1.6rem; }
+  .character-text { font-size: 1rem; }
+
+  /* Countdown */
   .countdown-card { min-width: 80px; padding: 1rem 1.2rem; }
   .countdown-number { font-size: 2.2rem; }
   .countdown-separator { font-size: 1.8rem; }
-  .details-grid { grid-template-columns: repeat(2, 1fr); }
-  .cartoons-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Grids */
+  .details-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .cartoons-grid { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+  .expect-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  /* Sections — tighten padding */
+  .countdown-section,
+  .character-section,
+  .cartoon-friends-section,
+  .details-section,
+  .expect-section,
+  .rsvp-section { padding: 3.5rem 1rem; }
+
+  .section-container { padding: 0 1rem; }
 }
 
+/* ========== PHONE (≤ 480px) ========== */
 @media (max-width: 480px) {
-  .hero-section { padding: 1.5rem 1rem 0; }
-  .details-grid { grid-template-columns: 1fr; }
+  /* Hero */
+  .hero-section { padding: 2rem 0.75rem 0; }
+  .hero-subtitle { font-size: 1.1rem; letter-spacing: 1px; }
+  .name-highlight { font-size: clamp(2.2rem, 12vw, 3.5rem); }
+  .age-badge { padding: 0.1rem 1rem; }
+  .age-number { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .age-suffix { font-size: clamp(1.2rem, 5vw, 1.8rem); }
+  .birthday-text { font-size: clamp(1.4rem, 7vw, 2rem); }
+  .hero-emojis { font-size: 1.3rem; letter-spacing: 3px; margin: 0.5rem 0; }
+  .hero-image-wrapper {
+    max-width: 95%; border-width: 3px;
+    margin: 1rem auto;
+  }
+  .scroll-cta {
+    padding: 0.8rem 1.8rem; font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .hero-wave svg { height: 40px; }
+
+  /* Countdown */
+  .countdown-wrapper { gap: 0.4rem; }
+  .countdown-card {
+    min-width: 60px; padding: 0.7rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+  .countdown-number { font-size: 1.6rem; }
+  .countdown-label { font-size: 0.65rem; letter-spacing: 1px; }
+  .countdown-separator { font-size: 1.4rem; }
+
+  /* Character */
+  .character-card { padding: 1.2rem; gap: 1rem; }
+  .character-image-wrapper { max-width: 100%; }
+  .character-name { font-size: 1.4rem; }
+  .character-text { font-size: 0.95rem; }
+  .badge { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+
+  /* Cartoon Grid */
+  .cartoons-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .cartoon-item { padding: 1rem 0.5rem; }
+  .cartoon-icon { font-size: 2rem; }
+  .cartoon-item span { font-size: 0.75rem; }
+
+  /* Details */
+  .details-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .detail-card { padding: 1.5rem 1rem; }
+  .detail-icon { font-size: 2.5rem; margin-bottom: 0.6rem; }
+  .detail-card h3 { font-size: 0.8rem; letter-spacing: 2px; }
+  .detail-value { font-size: 1.1rem; }
+  .detail-sub { font-size: 0.8rem; }
+
+  /* Expect */
+  .expect-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .expect-item { padding: 1.2rem; }
+  .expect-emoji { font-size: 2.5rem; margin-bottom: 0.6rem; }
+  .expect-item h3 { font-size: 1.1rem; }
+  .expect-item p { font-size: 0.85rem; }
+
+  /* RSVP */
+  .rsvp-card { margin: 1.5rem 0 0; border-width: 2px; }
+  .rsvp-content { padding: 2rem 1.2rem; }
+  .rsvp-message { font-size: 1rem; margin-bottom: 1.5rem; }
+  .rsvp-contact { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+  .rsvp-phone-btn, .rsvp-whatsapp-btn {
+    justify-content: center;
+    padding: 0.9rem 1.5rem; font-size: 1rem;
+    min-height: 48px; /* touch-friendly */
+  }
+  .rsvp-number { font-size: 1.2rem; }
+
+  /* Sections — compact padding */
+  .countdown-section,
+  .character-section,
+  .cartoon-friends-section,
+  .details-section,
+  .expect-section,
+  .rsvp-section { padding: 2.5rem 0.75rem; }
+
+  .section-title { font-size: clamp(1.4rem, 6vw, 2rem); margin-bottom: 0.3rem; }
+  .section-subtitle { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .section-container { padding: 0 0.5rem; }
+
+  /* Footer */
+  .footer { padding: 2rem 1rem; }
+  .footer-emojis { font-size: 1.5rem; letter-spacing: 6px; }
+  .footer-text { font-size: 0.95rem; }
+  .footer-wish { font-size: 1.2rem; }
+
+  /* Music toggle — larger for thumbs */
+  .music-toggle {
+    width: 48px; height: 48px;
+    bottom: 1rem; right: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* ========== VERY SMALL PHONES (≤ 360px) ========== */
+@media (max-width: 360px) {
+  .name-highlight { font-size: 2rem; }
+  .age-number { font-size: 2.2rem; }
+  .birthday-text { font-size: 1.3rem; }
+  .countdown-card { min-width: 55px; padding: 0.6rem 0.4rem; }
+  .countdown-number { font-size: 1.4rem; }
   .cartoons-grid { grid-template-columns: repeat(2, 1fr); }
+  .details-grid { grid-template-columns: 1fr; }
   .expect-grid { grid-template-columns: 1fr; }
-  .countdown-wrapper { gap: 0.5rem; }
-  .countdown-card { min-width: 65px; padding: 0.8rem; }
-  .countdown-number { font-size: 1.8rem; }
-  .rsvp-contact { flex-direction: column; align-items: center; }
+}
+
+/* ========== REDUCE MOTION (accessibility) ========== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  #confetti-canvas, #floating-elements { display: none; }
 }
