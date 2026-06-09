@@ -425,6 +425,24 @@ a { text-decoration:none; color:inherit; }
 
 .detail-sub { font-size: 0.9rem; color: var(--text-light); }
 
+.map-link-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  color: #fff; border-radius: 50px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.95rem; font-weight: 600;
+  box-shadow: 0 4px 15px rgba(81,207,102,0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-height: 44px;
+}
+.map-link-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(81,207,102,0.5);
+}
+
 /* ========== WHAT TO EXPECT ========== */
 .expect-section {
   padding: 5rem 1.5rem;
