@@ -92,8 +92,22 @@ function updateCountdown() {
   const diff = partyDate - now;
 
   if (diff <= 0) {
-    document.querySelectorAll('.countdown-number').forEach(el => el.textContent = 'Party Time!🎉');
-    document.querySelectorAll('.countdown-label').forEach(el => el.textContent = 'Be There at 7:30 PM!');
+    const wrapper = document.getElementById('countdown-wrapper');
+    // Only transform once
+    if (!wrapper.classList.contains('party-mode')) {
+      wrapper.classList.add('party-mode');
+      // Clear all existing cards and separators
+      wrapper.innerHTML = '';
+      // Create a single celebration container
+      const partyCard = document.createElement('div');
+      partyCard.className = 'countdown-card party-card';
+      partyCard.innerHTML = `
+        <span class="party-emoji">🎉🎂🎈</span>
+        <span class="countdown-number party-title">It's Party Time!</span>
+        <span class="countdown-label party-subtitle">Be There at 7:30 PM!</span>
+      `;
+      wrapper.appendChild(partyCard);
+    }
     return;
   }
 
