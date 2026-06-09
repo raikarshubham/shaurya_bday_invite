@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Shaurya's 5th Birthday Bash! 🎉</title>
+    <meta name="description"
+        content="You're invited to Shaurya's magical 5th Birthday Celebration! Join us for a fun-filled cartoon-themed party on June 21st!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating Elements Container -->
+    <div id="floating-elements" aria-hidden="true"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <p class="hero-subtitle animate-pop">✨ You're Invited To ✨</p>
+            <h1 class="hero-title">
+                <span class="name-highlight">Shaurya's</span>
+                <span class="age-badge">
+                    <span class="age-number" id="age-number">5</span>
+                    <span class="age-suffix">th</span>
+                </span>
+                <span class="birthday-text">Birthday Bash!</span>
+            </h1>
+            <div class="hero-emojis">🎈🎂🎁🎉🎊🧁🍰🎈</div>
+            <div class="hero-image-wrapper">
+                <img src="assets/birthday_banner.png"
+                    alt="Birthday celebration with cake, balloons, and party decorations" class="hero-image"
+                    id="hero-banner">
+            </div>
+            <a href="#party-details" class="scroll-cta" id="scroll-cta">
+                <span>Come Party With Us!</span>
+                <div class="bounce-arrow">↓</div>
+            </a>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z"
+                    fill="var(--section-bg-2)" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== COUNTDOWN SECTION ==================== -->
+    <section id="countdown-section" class="countdown-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title">🎉 The Big Day Is Coming! 🎉</h2>
+            <div class="countdown-wrapper" id="countdown-wrapper">
+                <div class="countdown-card" id="countdown-days">
+                    <span class="countdown-number">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-card" id="countdown-hours">
+                    <span class="countdown-number">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-card" id="countdown-minutes">
+                    <span class="countdown-number">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-card" id="countdown-seconds">
+                    <span class="countdown-number">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHARACTER SECTION ==================== -->
+    <!-- <section id="character-section" class="character-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title">🐻 Shaurya's Favorite! 🐻</h2>
+            <div class="character-card">
+                <div class="character-image-wrapper">
+                    <img src="assets/masha_bear_party.png" alt="Masha and the Bear celebrating at the party"
+                        class="character-image" id="masha-bear-img">
+                </div>
+                <div class="character-info">
+                    <h3 class="character-name">Masha & The Bear</h3>
+                    <p class="character-text">
+                        Join Shaurya and his favorite cartoon friends for an
+                        <strong>amazing adventure</strong> filled with fun, games,
+                        cake, and endless laughter! 🎈
+                    </p>
+                    <div class="character-badges">
+                        <span class="badge badge-pink">🧁 Cake</span>
+                        <span class="badge badge-blue">🎮 Games</span>
+                        <span class="badge badge-yellow">🎵 Music</span>
+                        <span class="badge badge-green">🎁 Gifts</span>
+                        <span class="badge badge-purple">💃 Dance</span>
+                        <span class="badge badge-orange">🎨 Fun</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ==================== CARTOON FRIENDS SECTION ==================== -->
+    <section id="cartoon-friends" class="cartoon-friends-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title"><!--📺 Cartoon Friends Joining The Party! 📺--></h2>
+            <p class="section-subtitle"><!--All of Shaurya's favorite characters will be there in spirit!--></p>
+            <div class="cartoons-grid" id="cartoons-grid">
+                <div class="cartoon-item" style="--delay: 0.1s">
+                    <div class="cartoon-icon">🐻</div>
+                    <span>Masha & Bear</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.2s">
+                    <div class="cartoon-icon">🐷</div>
+                    <span>Peppa Pig</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.3s">
+                    <div class="cartoon-icon">🐶</div>
+                    <span>PAW Patrol</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.4s">
+                    <div class="cartoon-icon">🍉</div>
+                    <span>CoComelon</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.5s">
+                    <div class="cartoon-icon">🐕</div>
+                    <span>Bluey</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.6s">
+                    <div class="cartoon-icon">🧽</div>
+                    <span>SpongeBob</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.7s">
+                    <div class="cartoon-icon">🏎️</div>
+                    <span>Cars</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.8s">
+                    <div class="cartoon-icon">🦁</div>
+                    <span>Lion Guard</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 0.9s">
+                    <div class="cartoon-icon">🐱</div>
+                    <span>Tom & Jerry</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 1.0s">
+                    <div class="cartoon-icon">🦖</div>
+                    <span>Dino Ranch</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 1.1s">
+                    <div class="cartoon-icon">👶</div>
+                    <span>Baby Shark</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 1.2s">
+                    <div class="cartoon-icon">🚂</div>
+                    <span>Thomas Train</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 1.2s">
+                    <div class="cartoon-icon">😺</div>
+                    <span>Oggy</span>
+                </div>
+                <div class="cartoon-item" style="--delay: 1.2s">
+                    <div class="cartoon-icon">🪳</div>
+                    <span>Cockroaches</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PARTY DETAILS SECTION ==================== -->
+    <section id="party-details" class="details-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title">🎈 Party Details 🎈</h2>
+            <div class="details-grid">
+                <div class="detail-card" id="detail-date" style="--accent: var(--pink)">
+                    <div class="detail-icon">📅</div>
+                    <h3>When</h3>
+                    <p class="detail-value">June 21, 2026</p>
+                    <p class="detail-sub">Sunday</p>
+                </div>
+                <div class="detail-card" id="detail-time" style="--accent: var(--blue)">
+                    <div class="detail-icon">🕐</div>
+                    <h3>Time</h3>
+                    <p class="detail-value">To Be Announced</p>
+                    <p class="detail-sub">Stay Tuned!</p>
+                </div>
+                <div class="detail-card" id="detail-venue" style="--accent: var(--green)">
+                    <div class="detail-icon">📍</div>
+                    <h3>Where</h3>
+                    <p class="detail-value">Venue TBA</p>
+                    <p class="detail-sub">Details Coming Soon!</p>
+                </div>
+                <div class="detail-card" id="detail-theme" style="--accent: var(--orange)">
+                    <div class="detail-icon">🎨</div>
+                    <h3>Theme</h3>
+                    <p class="detail-value">TBA</p>
+                    <p class="detail-sub">Details Coming Soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHAT TO EXPECT SECTION ==================== -->
+    <section id="expect-section" class="expect-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title">🌟 What To Expect 🌟</h2>
+            <div class="expect-grid">
+                <div class="expect-item" id="expect-cake">
+                    <span class="expect-emoji">🎂</span>
+                    <h3>Amazing Cake</h3>
+                    <p>A spectacular birthday cake that will wow everyone!</p>
+                </div>
+                <div class="expect-item" id="expect-games">
+                    <span class="expect-emoji">🎮</span>
+                    <h3>Fun Games</h3>
+                    <p>Exciting games & activities for all the little ones!</p>
+                </div>
+                <div class="expect-item" id="expect-dance">
+                    <span class="expect-emoji">💃</span>
+                    <h3>Music & Dance</h3>
+                    <p>Dance to all your favorite cartoon theme songs!</p>
+                </div>
+                <div class="expect-item" id="expect-goodies">
+                    <span class="expect-emoji">🎁</span>
+                    <h3>Goodie Bags</h3>
+                    <p>Take home amazing surprises & goodies!</p>
+                </div>
+                <div class="expect-item" id="expect-food">
+                    <span class="expect-emoji">🍕</span>
+                    <h3>Yummy Food</h3>
+                    <p>Delicious treats & snacks for everyone to enjoy!</p>
+                </div>
+                <div class="expect-item" id="expect-photos">
+                    <span class="expect-emoji">📸</span>
+                    <h3>Photo Booth</h3>
+                    <p>Capture magical memories with fun props!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RSVP SECTION ==================== -->
+    <section id="rsvp-section" class="rsvp-section">
+        <div class="section-container">
+            <h2 class="section-title cartoon-title">💌 CONTACT 💌</h2>
+            <div class="rsvp-card" id="rsvp-card">
+                <div class="rsvp-pattern-bg"></div>
+                <div class="rsvp-content">
+                    <p class="rsvp-message">
+                        We'd love to have you celebrate with us!<br>
+                        See you at the party! 🥳🎉
+                    </p>
+
+                    <h1 class="rsvp-note">ROSHAN PAWASKAR</h1>
+                    <br>
+                    <div class="rsvp-contact">
+                        <a href="tel:+919980563854" class="rsvp-phone-btn" id="rsvp-call-btn">
+                            <span class="phone-icon">📞</span>
+                            <span>Call Us</span>
+                        </a>
+                        <a href="https://wa.me/919980563854?text=Hi!%20We'd%20love%20to%20come%20to%20Shaurya's%205th%20Birthday%20Party!%20🎂🎉"
+                            target="_blank" rel="noopener noreferrer" class="rsvp-whatsapp-btn" id="rsvp-whatsapp-btn">
+                            <span class="whatsapp-icon">💬</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    <!-- <p class="rsvp-number">+91 9980563854</p> -->
+
+                    <h1 class="rsvp-note">NAMRATA PAWASKAR</h1>
+                    <br>
+                    <div class="rsvp-contact">
+                        <a href="tel:+917483266479" class="rsvp-phone-btn" id="rsvp-call-btn">
+                            <span class="phone-icon">📞</span>
+                            <span>Call Us</span>
+                        </a>
+                        <a href="https://wa.me/+917483266479?text=Hi!%20We'd%20love%20to%20come%20to%20Shaurya's%205th%20Birthday%20Party!%20🎂🎉"
+                            target="_blank" rel="noopener noreferrer" class="rsvp-whatsapp-btn" id="rsvp-whatsapp-btn">
+                            <span class="whatsapp-icon">💬</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                    <!-- <p class="rsvp-number">+91 7483266479</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-emojis">🎈🎂🎉🐻🎊🧁🎈</div>
+            <p class="footer-text">
+                Made with ❤️ for <strong>Shaurya's</strong> special day
+            </p>
+            <p class="footer-wish">See you all at the party! 🥳</p>
+        </div>
+    </footer>
+
+    <!-- Music Toggle (optional fun) -->
+    <button class="music-toggle" id="music-toggle" aria-label="Toggle party sounds" title="Party Mode!">
+        🎵
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
